@@ -1,33 +1,29 @@
-#a {
-    grid-area: a;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#b {
-    grid-area: b;
+.is-paddingless-horizontal {
+    padding-left: 0;
+    padding-right: 0;
 }
-#c {
-    grid-area: c;
-}
-#d {
-    grid-area: d;
-}
-#e {
-    grid-area: e;
-}
-
-#grid {
+/*Three columns, narrow, big, narrow three-column setup*/
+.grid {
     display: grid;
-    grid-template-areas:
-    "a a a a"
-    "b c d e";
-    grid-row-gap: 1rem;
+    /*Use xl to identify all three columns*/
+    /*1fr are the columns*/
+    /*1.5rem (24px) gutter to the left and right of the content column*/
+    grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0, 660px) [md-end] 1.5rem 1fr [xl-end];
 }
-
-/* Change format on small device width*/
-@media (max-width: 512px) {
-    #grid {
-        grid-template-areas:
-        "a a a"
-        "b c d"
-        "e e e";
-    }
+/*Anything inside the grid will inherit the column rule*/
+.grid * {
+    grid-column: md;
+}
+.grid-xl {
+    grid-column: xl;
+}
+/* 624px + 1.5*rem * 2 */
+@media (max-width: 672px) {
+    :root {
+        font-size: 90%;
 }
