@@ -26,7 +26,7 @@
                 /*Use xl to identify all three columns*/
                 /*1fr are the columns*/
                 /*1.5rem (24px) gutter to the left and right of the content column*/
-                grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+                grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0, 660px) [md-end] 1.5rem 1fr [xl-end];
             }
             /*Anything inside the grid will inherit the column rule*/
             .grid * {
@@ -44,12 +44,12 @@
     </head>
 
     <body>
-        <!-- Hero Section -->
+        <!-- Hero/Intro Section -->
         <section class="hero is-primary is-fullheight is-bold">
             <div class="hero-body center">
-                <div class="container has-text-centered has-text-weight-bold">
-                    <h1 class="title is-1">Harry Nguon</h1>
-                    <h2 class="subtitle is-5">Aspiring Software Developer</h2>
+                <div class="container has-text-centered">
+                    <h1 class="subtitle is-1" style="margin-bottom: 0px;">Hi, I'm <strong>Harry Nguon</strong>.</h1>
+                    <h2 class="subtitle is-4">I am a Computer Science Graduate living in Wellington, NZ.</h2>
                     <br>
                     <br>
                     <a href="https://github.com/harrynguon" target="_blank"><i class="fab fa-github icon is-medium"></i></a>
@@ -57,15 +57,77 @@
             </div>
         </section> 
 
-        <!-- Projects Section -->
-        <section class="section is-paddingless-horizontal">
+        <!-- Body Section -->
+        <section class="section is-paddingless-horizontal" style="padding-top: 0px; text-align:justify;">
+            <div class="container grid" style="max-width: 800px;">
+            <!-- Skills -->
+                <div class="section is-paddingless-horizontal">
+                    <h1 class="title is-2">Skills</h1>
+                    <h2 class="subtitle is-5 has-text-weight-light">I am an avid Linux user, and I have experience with many of the popular text editors/IDEs out there. I have a wide perspective of coding due to my diverse coding background. I am familiar with numerous programming languages, most of which are: <br><br><strong>Java</strong>, <strong>Python</strong>, <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>SQL</strong>, <strong>Haskell</strong>, and <strong>Prolog</strong>.</h2>
+                </div>
+            </div>
+            <!-- Courses -->
+            <div class="section is-paddingless-horizontal has-background-light">
+                <div class="container grid" style="max-width: 800px;">
+                    <h1 class="title is-2">Courses</h1>
+                    <h2 class="subtitle is-5 has-text-weight-light">These are the courses I took throughout my degree in my final year.</h2>
+                    <table>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th> 
+                            <th>Trimester</th>
+                        </tr>
+                        <tr>
+                            <td>COMP304</td>
+                            <td>Programming Languages</td> 
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>COMP307</td>
+                            <td>Intro to Artificial Intelligence</td> 
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>COMP309</td>
+                            <td>Machine Learning Tools and Techniques</td> 
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>COMP261</td>
+                            <td>Algorithms and Data Structures</td> 
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>SWEN304</td>
+                            <td>Database System Engineering</td> 
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>SWEN325</td>
+                            <td>Software Dev for Mobile</td> 
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>SWEN326</td>
+                            <td>Safety-Critical Systems</td> 
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>INFO101</td>
+                            <td>Foundations of Information Systems</td> 
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- Projects -->
             <div class="container grid" style="max-width: 800px;">
                 <div class="section is-paddingless-horizontal">
                     <h1 class="title is-2">Projects</h1>
-                    <h2 class="subtitle is-5 has-text-weight-light">These are the projects that I have worked on throughout my studies. Most of the projects are publicly available on my GitHub.</h2>
+                    <h2 class="subtitle is-5 has-text-weight-light">These are the projects that I have worked on throughout my studies. Most of the projects are publicly available on my <a href="https://github.com/harrynguon" target="_blank">GitHub</a>.</h2>
                 </div>
                 <div class="section is-paddingless-horizontal" style="padding-top:0px;">
-                    <h1 class="title is-3">University Companion Mobile App</h1>
+                    <h1 class="title is-4">University Companion Mobile App</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">I implemented a university companion app on two different occasions using a different mobile framework each time. The app consists of a lecture timetable page where you can add, modify, and remove lectures. It also consists of a pomodoro timer page which can be used to allocate your time for studying. Finally, the app contains user authentication functionality via Google Firebase.</h2>
                 </div>
                 <figure class="columns is-mobile is-variable is-1 is-marginless grid-xl">
@@ -98,7 +160,7 @@
                 </div>
 
                 <div class="section is-paddingless-horizontal">
-                    <h1 class="title is-3">SCLoot Discord Bot</h1>
+                    <h1 class="title is-4">SCLoot Discord Bot</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">This is a Discord bot that I developed using the Java API wrapper called Discord4J. This Discord bot is primarily used for my Discord server called SCLoot which is dedicated to the game called StarBreak. The purpose of this server is to share what loot drops each person gets for the Star Cathedral. The server has over 400 members which makes it quite active as StarBreak has a relatively small player base.</h2>
                 </div>
                 <figure class="columns is-mobile is-variable is-1 is-marginless grid-xl">
@@ -137,18 +199,17 @@
                     <p>
                         This is the bulk of the Discord Bot. It really brings the community together as each person shares their loot. There are some additional features that I have also integrated into the bot:
                         <ul>
-                            <li>First</li>
-                            <li>Second</li>
-                            <li>Third</li>
-                            <li>Four</li>
-                            <li>Fifth</li>
+                            <li>Moderation tools - (kicking/banning/warning) users.</li>
+                            <li>Auto-updating role system based on how many submissions a user has.</li>
+                            <li>User authentication via messaging the bot, which checks whether the given username is a valid StarBreak username or not.</li>
+                            <li>Restricting reaction emojis to only emojis that are contained in the submission.</li>
                         </ul> 
                         I dealt a lot with Java Dates during the coding process. I am grateful that it was designed in a functional style (unlike JavaScript Dates) as it ensured there were no cross-referencing problems.
                     </p>
                 </div>
 
                 <div class="section is-paddingless-horizontal">
-                    <h1 class="title is-3">The Wandering Alien</h1>
+                    <h1 class="title is-4">The Wandering Alien</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">The Wandering Alien is a 2D puzzle platformer game that is currently being developed using the Godot game engine. Your goal in the game is to find the exit at each level, collecting as many stars as you can along the way.</h2>
                 </div>
                 <figure class="columns is-mobile is-variable is-1 is-marginless grid-xl">
@@ -163,7 +224,7 @@
                 </div>
 
                 <div class="section is-paddingless-horizontal">
-                    <h1 class="title is-3">Dungeon Raider</h1>
+                    <h1 class="title is-4">Dungeon Raider</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">Dungeon Raider is a medieval-fantasy themed 2D dungeon crawler game. Your goal is to fight monsters, upgrade your weapon, and reach the end of the dungeon. You are given a sword which you must use to kill the monsters to progress through the entire dungeon.</h2>
                 </div>
                 <figure class="columns is-mobile is-variable is-1 is-marginless grid-xl">
@@ -181,9 +242,28 @@
                         This game was developed in a team of five members for a group project for SWEN222 (back in early 2017). The game was developed using vanilla Java without the use of any external frameworks or libraries. Different components of the game were designated to each team member, and I ended up being responsible for the map rendering, loading, and saving. The map utilised a tile system which made saving and loading much more simple.  
                     </p>
                 </div>
-
             </div>
         </section>
+
+        <!-- Contact Information -->
+        <section class="hero is-primary has-background-info">
+            <div class="hero-body center">
+                <div class="container has-text-centered">
+                    <h1 class="subtitle is-2" style="margin-bottom: 0px;">Any Enquiries?</h1>
+                    <br>
+                    <a href="mailto:harrynguon@gmail.com" target="_blank"><i class="fas fa-envelope icon is-medium"></i></i></a>
+                </div>
+            </div>
+        </section> 
+
+        <!-- Footer (Copyright Information) -->
+        <section class="hero has-background-warning">
+            <div class="hero-footer center">
+                <div class="container has-text-centered">
+                    <h1 class="subtitle is-6 has-text-grey" style="margin-bottom: 0px;">Copyright &copy; 2018 Harry Nguon</h1>
+                </div>
+            </div>
+        </section> 
 
     </body>
 </html>
