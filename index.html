@@ -13,47 +13,45 @@
 
     <body>
         <!-- Hero/Intro Section -->
-        <section class="hero is-primary is-fullheight is-bold">
-            <div class="hero-body center">
-                <div class="container has-text-centered">
-                    <h1 class="subtitle is-1" style="margin-bottom: 0px;">Hi, I'm <strong>Harry Nguon</strong>.</h1>
-                    <h2 class="subtitle is-4">I am a Computer Science Graduate living in Wellington, NZ.</h2>
-                    <br>
-                    <br>
-                    <a href="https://github.com/harrynguon" target="_blank"><i class="fab fa-github icon is-medium">
-                    </i></a>
-                </div>
-            </div>
-            <div class="hero-foot">
-                <nav class="tabs is-boxed is-fullwidth">
+        <section class="hero is-primary is-fullheight is-bold" id="launch">
+             <div class="hero-head">
+                <nav class="tabs is-right is-overlay">
                   <div class="container">
                     <ul>
-                      <li class="is-active">
-                        <a>Landing</a>
+                      <li>
+                        <a href="#skills">Skills</a>
                       </li>
                       <li>
-                        <a>Skills</a>
+                        <a href="#courses">Courses</a>
                       </li>
                       <li>
-                        <a>Courses</a>
+                        <a href="#projects">Projects</a>
                       </li>
                       <li>
-                        <a>Projects</a>
-                      </li>
-                      <li>
-                        <a>Contact</a>
+                        <a href="#contact">Contact</a>
                       </li>
                     </ul>
                   </div>
                 </nav>
               </div>
+            <div class="hero-body center">
+                <div class="container has-text-centered is-unselectable">
+                    <h1 class="subtitle is-1" style="margin-bottom: 0px;">Hi, I'm <strong>Harry Nguon</strong>.</h1>
+                    <h2 class="subtitle is-4">I am a Computer Science Graduate living in Wellington, NZ.</h2>
+                    <br>
+                    <br>
+                    <a href="https://github.com/harrynguon" target="_blank">
+                        <i class="fab fa-github icon is-medium" title="My GitHub Link"></i>
+                    </a>
+                </div>
+            </div>
         </section> 
 
         <!-- Body Section -->
         <section class="section is-paddingless-horizontal" style="padding-top: 0px; text-align:justify;">
             <div class="container grid" style="max-width: 800px;">
             <!-- Skills -->
-                <div class="section is-paddingless-horizontal">
+                <div class="section is-paddingless-horizontal" id="skills">
                     <h1 class="title is-2">Skills</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">I am an avid Linux user, and I have experience with 
                         many of the popular text editors/IDEs out there. I have a wide perspective of coding due to my 
@@ -64,7 +62,7 @@
                 </div>
             </div>
             <!-- Courses -->
-            <div class="section is-paddingless-horizontal has-background-light">
+            <div class="section is-paddingless-horizontal has-background-light" id="courses">
                 <div class="container grid" style="max-width: 800px;">
                     <h1 class="title is-2">Courses</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">These are the courses that I took throughout my 
@@ -125,7 +123,7 @@
                 </div>
             </div>
             <!-- Projects -->
-            <div class="container grid" style="max-width: 800px;">
+            <div class="container grid" style="max-width: 800px;" id="projects">
                 <div class="section is-paddingless-horizontal">
                     <h1 class="title is-2">Projects</h1>
                     <h2 class="subtitle is-5 has-text-weight-light">These are the projects that I have worked on 
@@ -296,13 +294,17 @@
         </section>
 
         <!-- Contact Information -->
-        <section class="hero is-primary has-background-primary is-bold">
+        <section class="hero is-primary has-background-primary is-bold" id="contact">
             <div class="hero-body center">
                 <div class="container has-text-centered">
-                    <h1 class="subtitle is-2" style="margin-bottom: 0px;">Any Enquiries?</h1>
+                    <h1 class="subtitle is-2 is-unselectable" style="margin-bottom: 0px;">Any Enquiries?</h1>
                     <br>
-                    <a href="mailto:harrynguon@gmail.com" target="_blank"><i class="fas fa-envelope icon is-medium"></i>
-                    </i></a>
+                    <a href="mailto:harrynguon@gmail.com" target="_blank">
+                        <i class="fas fa-envelope icon is-medium"></i>
+                    </a>
+                    <!-- <a href="#launch">
+                        <i class="fas fa-arrow-up icon is-medium" style="float: right;" title="Back to top"></i>
+                    </a> -->
                 </div>
             </div>
         </section> 
@@ -311,8 +313,7 @@
         <section class="hero has-background-light is-bold">
             <div class="hero-footer center">
                 <div class="container has-text-centered">
-                    <h1 class="subtitle is-6" style="margin-bottom: 0px;">
-                    Copyright &copy; 2018 Harry Nguon</h1>
+                    <h1 class="subtitle is-6" style="margin-bottom: 0px;">Copyright &copy; 2018 Harry Nguon</h1>
                 </div>
             </div>
         </section> 
