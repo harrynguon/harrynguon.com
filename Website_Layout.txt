@@ -1,5 +1,0 @@
-Name/Hero
-Skills/Interests
-CoursesTaken
-Projects
-Contact
