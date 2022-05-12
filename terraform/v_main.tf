@@ -1,13 +1,13 @@
 variable "account_id" {
-  type = number
+	type = number
 }
 
-variable "tags" {
-  type = map(string)
-  
-  default = {
-    Owner = "Harry"
-    AppName = "portfolio-web"
-    ManagedBy = "Terraform"
-  }
+variable "domain_name" {
+	type    = string
+	default = "harrynguon.com"
+}
+
+variable "www_domain_name" {
+	type    = string
+	default = "www.harrynguon.com"
 }
