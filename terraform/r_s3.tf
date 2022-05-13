@@ -7,11 +7,11 @@ resource "aws_s3_bucket_website_configuration" "portfolio_website_bucket_website
 	bucket = aws_s3_bucket.portfolio_website_bucket.bucket
 
 	index_document {
-		suffix = "index.html"
+		suffix = var.default_root_object
 	}
 
 	error_document {
-		key = "index.html"
+		key = var.default_root_object
 	}
 }
 
@@ -27,26 +27,21 @@ resource "aws_s3_bucket_public_access_block" "example" {
 	block_public_policy = false
 }
 
-data "aws_iam_policy_document" "portfolio_website_policy_public_access" {
+data "aws_iam_policy_document" "portfolio_website_bucket_policy" {
 	statement {
 		principals {
 			type        = "AWS"
-			identifiers = ["*"]
+			identifiers = [aws_cloudfront_origin_access_identity.origin_access_identity.iam_arn]
 		}
 
-		actions = [
-			"s3:GetObject"
-		]
-
-		resources = [
-			"${aws_s3_bucket.portfolio_website_bucket.arn}/*"
-		]
+		actions   = ["s3:GetObject"]
+		resources = ["${aws_s3_bucket.portfolio_website_bucket.arn}/*"]
 	}
 }
 
 resource "aws_s3_bucket_policy" "portfolio_website_policy_public_access" {
 	bucket = aws_s3_bucket.portfolio_website_bucket.id
-	policy = data.aws_iam_policy_document.portfolio_website_policy_public_access.json
+	policy = data.aws_iam_policy_document.portfolio_website_bucket_policy.json
 }
 
 
