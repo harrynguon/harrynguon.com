@@ -3,31 +3,21 @@ resource "aws_s3_bucket" "portfolio_website_bucket" {
 	bucket = var.domain_name
 }
 
-resource "aws_s3_bucket_website_configuration" "portfolio_website_bucket_website_configuration" {
-	bucket = aws_s3_bucket.portfolio_website_bucket.bucket
-
-	index_document {
-		suffix = var.default_root_object
-	}
-
-	error_document {
-		key = var.default_root_object
-	}
-}
-
 resource "aws_s3_bucket_acl" "portfolio_website_bucket_acl" {
 	bucket = aws_s3_bucket.portfolio_website_bucket.id
-	acl    = "public-read"
+	acl    = "private"
 }
 
-resource "aws_s3_bucket_public_access_block" "example" {
+resource "aws_s3_bucket_public_access_block" "portfolio_website_bucket_public_access_block" {
 	bucket = aws_s3_bucket.portfolio_website_bucket.id
 
-	block_public_acls   = false
-	block_public_policy = false
+	block_public_acls       = true
+	block_public_policy     = true
+	ignore_public_acls      = true
+	restrict_public_buckets = true
 }
 
-data "aws_iam_policy_document" "portfolio_website_bucket_policy" {
+data "aws_iam_policy_document" "portfolio_website_bucket_policy_document" {
 	statement {
 		principals {
 			type        = "AWS"
@@ -39,21 +29,7 @@ data "aws_iam_policy_document" "portfolio_website_bucket_policy" {
 	}
 }
 
-resource "aws_s3_bucket_policy" "portfolio_website_policy_public_access" {
+resource "aws_s3_bucket_policy" "portfolio_website_bucket_policy" {
 	bucket = aws_s3_bucket.portfolio_website_bucket.id
-	policy = data.aws_iam_policy_document.portfolio_website_bucket_policy.json
-}
-
-
-# www. subdomain bucket
-resource "aws_s3_bucket" "www_portfolio_website_bucket" {
-	bucket = var.www_domain_name
-}
-
-resource "aws_s3_bucket_website_configuration" "www_portfolio_website_bucket_website_configuration" {
-	bucket = aws_s3_bucket.www_portfolio_website_bucket.bucket
-
-	redirect_all_requests_to {
-		host_name = aws_s3_bucket.portfolio_website_bucket.bucket
-	}
+	policy = data.aws_iam_policy_document.portfolio_website_bucket_policy_document.json
 }

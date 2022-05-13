@@ -22,7 +22,7 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
 
 	default_cache_behavior {
 		target_origin_id       = local.origin_id
-		allowed_methods        = ["GET", "HEAD", "OPTIONS"]
+		allowed_methods        = ["GET", "HEAD"]
 		cached_methods         = ["GET", "HEAD"]
 		viewer_protocol_policy = "redirect-to-https"
 
@@ -59,7 +59,7 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
 }
 
 # Cache policy for the CloudFront Behaviour setting
-# For now let's set to no caching
+# No caching
 resource "aws_cloudfront_cache_policy" "cloudfront_cache_policy" {
 	name = "CF-Cache-Policy-Portfolio-Website"
 
