@@ -50,11 +50,12 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
 		response_code         = 200
 	}
 
-	price_class = "PriceClass_All"
+	price_class = "PriceClass_200"
 
 	viewer_certificate {
-		acm_certificate_arn = data.aws_acm_certificate.domain_name_certificate.arn
-		ssl_support_method  = "sni-only"
+		acm_certificate_arn      = data.aws_acm_certificate.domain_name_certificate.arn
+		ssl_support_method       = "sni-only"
+		minimum_protocol_version = "TLSv1.2_2021"
 	}
 }
 
