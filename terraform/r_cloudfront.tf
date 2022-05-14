@@ -60,13 +60,12 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
 }
 
 # Cache policy for the CloudFront Behaviour setting
-# No caching
 resource "aws_cloudfront_cache_policy" "cloudfront_cache_policy" {
 	name = "CF-Cache-Policy-Portfolio-Website"
 
-	default_ttl = 0
-	min_ttl     = 0
-	max_ttl     = 0
+	default_ttl = 86400
+	min_ttl     = 1
+	max_ttl     = 31536000
 
 	parameters_in_cache_key_and_forwarded_to_origin {
 		cookies_config {
@@ -81,8 +80,8 @@ resource "aws_cloudfront_cache_policy" "cloudfront_cache_policy" {
 			query_string_behavior = "none"
 		}
 
-		enable_accept_encoding_brotli = false
-		enable_accept_encoding_gzip   = false
+		enable_accept_encoding_brotli = true
+		enable_accept_encoding_gzip   = true
 	}
 
 }
