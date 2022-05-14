@@ -9,3 +9,7 @@ data "aws_acm_certificate" "domain_name_certificate" {
 	domain   = var.domain_name
 	statuses = ["ISSUED"]
 }
+
+data "aws_iam_user" "github_actions_user" {
+	user_name = "GitHub-Actions-User"
+}

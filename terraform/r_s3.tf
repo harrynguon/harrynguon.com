@@ -23,9 +23,36 @@ data "aws_iam_policy_document" "portfolio_website_bucket_policy_document" {
 			type        = "AWS"
 			identifiers = [aws_cloudfront_origin_access_identity.origin_access_identity.iam_arn]
 		}
-
+		sid       = "allow-cf-oai-to-access-s3-files"
 		actions   = ["s3:GetObject"]
 		resources = ["${aws_s3_bucket.portfolio_website_bucket.arn}/*"]
+	}
+
+	statement {
+		principals {
+			type        = "AWS"
+			identifiers = [data.aws_iam_user.github_actions_user.arn]
+		}
+		sid     = "allow-github-user-s3-access-1"
+		actions = [
+			"s3:PutObject",
+			"s3:PutObjectAcl",
+			"s3:GetObjectAcl"
+		]
+		resources = ["${aws_s3_bucket.portfolio_website_bucket.arn}/*"]
+	}
+
+	statement {
+		principals {
+			type        = "AWS"
+			identifiers = [data.aws_iam_user.github_actions_user.arn]
+		}
+		sid     = "allow-github-user-s3-access-2"
+		actions = [
+			"s3:ListBucket",
+			"s3:GetBucketLocation"
+		]
+		resources = [aws_s3_bucket.portfolio_website_bucket.arn]
 	}
 }
 
