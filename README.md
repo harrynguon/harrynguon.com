@@ -1,5 +1,5 @@
 # Personal Website
 
-This has been provisioned on AWS using Terraform.
+This is a small, static website with the hosting infrastructure provisioned on AWS using Terraform (IaC).
 
 ![Architecture.png](Architecture.png)
